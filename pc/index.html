@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coinlot</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./libs/style.css" type="text/css" media="all"/>
+    <!-- <link rel="stylesheet" href="./libs/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="./libs/swiper.css">
+    <script src="./libs/jquery-1.10.2.js"></script>
+    <script src="./libs/vue.js"></script>
+    <script src="./libs/swiper.js"></script>
+    <!-- <script src="./libs/axios.js"></script> -->
+
+
+    <!--杨欢 -->
+    <script type="text/javascript" src="./libs/function.js"></script>
+    <style>
+        body, dl, dt, dd, ul, ol, li, pre, form, fieldset, input, p, blockquote, th, td {
+        font-weight:400;
+        margin:0;
+        padding:0;
+        }
+        h1, h2, h3, h4, h4, h5 {
+        margin:0;
+        padding:0;
+        }
+        body {
+        background-color:#FFFFFF;
+        color:#666666;
+        font-family:Helvetica,Arial,sans-serif;
+        font-size:12px;
+        padding:0 10px;
+        text-align:left;
+        }
+        select {
+        font-size:12px;
+        }
+        table {
+        border-collapse:collapse;
+        }
+        fieldset, img {
+        border:0 none;
+        }
+        fieldset {
+        margin:0;
+        padding:0;
+        }
+        fieldset p {
+        margin:0;
+        padding:0 0 0 8px;
+        }
+        legend {
+        display:none;
+        }
+        address, caption, em, strong, th, i {
+        font-style:normal;
+        font-weight:400;
+        }
+        table caption {
+        margin-left:-1px;
+        }
+        hr {
+        border-bottom:1px solid #FFFFFF;
+        border-top:1px solid #E4E4E4;
+        border-width:1px 0;
+        clear:both;
+        height:2px;
+        margin:5px 0;
+        overflow:hidden;
+        }
+        ol, ul {
+        list-style-image:none;
+        list-style-position:outside;
+        list-style-type:none;
+        }
+        caption, th {
+        text-align:left;
+        }
+        q:before, q:after, blockquote:before, blockquote:after {
+        content:””;
+        }
+        body {
+        font-family:arial,helvetica,sans-serif;
+        font-size:13px;
+        font-size-adjust:none;
+        font-stretch:normal;
+        font-style:normal;
+        font-variant:normal;
+        font-weight:normal;
+        line-height:1.4;
+        text-align:center;
+        }
+        body, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, p, form, fieldset, legend, input, textarea, select, button, th, td {
+        margin:0;
+        padding:0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+        font-size:100%;
+        font-weight:normal;
+        }
+        table {
+        font-size:inherit;
+        }
+        input, select {
+        font-family:arial,helvetica,clean,sans-serif;
+        font-size:100%;
+        font-size-adjust:none;
+        font-stretch:normal;
+        font-style:normal;
+        font-variant:normal;
+        font-weight:normal;
+        line-height:normal;
+        }
+        button {
+        overflow:visible;
+        }
+        th, em, strong, b, address, cite {
+        font-style:normal;
+        font-weight:normal;
+        }
+        li {
+        list-style-image:none;
+        list-style-position:outside;
+        list-style-type:none;
+        }
+        img, fieldset {
+        border:0 none;
+        }
+        ins {
+        text-decoration:none;
+        }
+        a { text-decoration: none!important; }
+        
+        .banner_wrap{
+            min-width: 1205px;
+            height: 525px;
+            background: url('./img/banner.jpg') no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .nav{
+            width: 100%;
+            height: 58px;
+            border-bottom: 1px solid rgb(125,125,125);
+        }
+        .wrap-nav{
+            width: 1205px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        .wrap-nav img{
+            width: 176px;
+            height: 36px;
+        }
+        .wrap-nav .handle-go{
+            flex: 1;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav-li ul{
+            height: 100%;
+            width: 400px;
+            position: relative;
+            margin-left: 30px;
+            display: flex;
+            font-size: 16px;
+            align-items: center;
+            justify-content: space-around
+        }
+        .nav-li ul .nav-huol{
+            position: absolute;
+            width: 13px;
+            height: 15px;
+            left: 0;
+        }
+        .nav-li ul a{
+            color: rgb(255,255,255);
+        }
+        .nav-li ul a li{
+            list-style: none;
+        }
+        .nav-golo ul{
+            display: flex;
+            color: rgb(255,255,255);
+            align-items: center;
+        }
+        .nav-golo{
+            height: 100%;
+            display: flex;
+        }
+        .nav-golo ul a{
+            color: rgb(255,255,255);
+        }
+        .nav-golo ul a img{
+            width: 25px;
+            height: 20px;
+        }
+        .nav-golo ul li{
+            margin-left: 40px;
+            font-size: 14px;
+        }
+        .nav-golo ul .img-nav{
+            display: flex;
+        }
+        .nav-golo ul .img-nav img{
+            padding-right: 6px;
+        }
+        .nav-golo ul .nav-spans{
+            position: relative;
+            padding-right: 20px;
+        }
+        .nav-golo ul .nav-spans span{
+            position: absolute;
+            border-bottom: 5px solid transparent;
+            border-top: 5px solid white;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            top: 10px;
+            left: 65px;
+        }
+        .nav-golo ul .nav-spans .nav-displayn{
+            position: absolute;
+            width: 80px;
+            height: 120px;
+            top: 30px;
+            z-index: 22;
+            background-color: #FFFFFF;
+            line-height: 38px;
+            display: none;
+        }
+        .nav-golo ul .loginre{
+            width: 126px;
+            height: 34px;
+            line-height: 34px;
+            border-radius: 7px;
+            overflow: hidden;
+            display: flex;
+            display: none;
+        }
+        .nav-golo ul .ac{
+            display: block;
+        }
+        .nav-golo ul .loginre a{
+            display: inline-block;
+            flex: 1;
+            font-size: 16px;
+            background-color: #FFFFFF;
+            color: rgb(50,50,50);
+        }
+        .nav-golo ul .loginre a:nth-child(1){
+            color: rgb(255,255,255);
+            background-color: rgb(51,152,218);
+        }
+        .nav-spans .nav-displayn a{
+            color: black;
+        }
+        #clickHanld{
+            cursor: pointer;
+            z-index: 3;
+        }
+        .wrap-tusw{
+            height: 30px;
+            margin: 0 auto;
+            margin-top: 55px;
+            color: rgb(255,255,255);
+            font-size: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .wrap-goreglo{
+            margin-top: 30px;
+            color: rgb(255,255,255);
+            font-size: 18px;
+        }
+        /* .wrap-goreglo span a{
+            color: rgb(255,255,255);
+        }
+        .wrap-goreglo span:nth-child(1){
+            margin-right: 10px;
+        }
+        .wrap-goreglo span:nth-child(1) a{
+            margin-right: 3px;
+        }
+        .wrap-goreglo span:nth-child(1) span{
+            margin-left: 3px;
+        } */
+        .swri-lunbo{
+            height: 150px;
+            width: 1205px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 55px;
+            height: 180px;
+        }
+        .swri-lunbo ul{
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+        }
+        .swri-lunbo ul li.swiper-slide{
+            height: 150px;
+            float: left;
+            background-color: aqua;
+        }
+        .swri-lunbo ul li img{
+            width: 273px;
+            height: 150px;
+        }
+        .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+            width: 24px;
+            height: 5px;
+            margin: 0 10px;
+            border-radius: 0;
+            background-color: rgb(51,152,218);
+        }
+        .Massge-gun{
+            width: 1205px;
+            display: flex;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+        .mass-hesder{
+            display: flex;
+            margin-top: 40px;
+            line-height: 22px;
+            color: rgb(255,255,255);
+            font-size:14px;
+        }
+        .mass-hesder .ul{
+            flex: 1;
+            display: flex;
+            height:22px; 
+            width: 300px;
+            overflow:hidden;
+            flex-direction: column;
+            position: relative;
+            transition: top 0.5s;
+        }
+        .mass-hesder .ul div{
+            position: absolute;
+            top:50px;
+            width: 300px;
+        }
+        .mass-hesder span{
+            margin-left: 4px;
+        }
+        .mass-hesder ul li{
+            height:22px; 
+            line-height:22px;
+            text-align: left; 
+            margin-left: 5px;
+        }
+        .mass-hesder:nth-child(1) span:nth-child(1){
+            color: rgb(87,185,249);
+        }
+        .mass-hesder:nth-child(2) span:nth-child(1){
+            color: rgb(250,29,29);
+        }
+        .mass-hesder:nth-child(3) span:nth-child(1){
+            color: rgb(20,237,209);
+        }
+        .wrap-two{
+            min-width: 1205px;
+            width: 100%;              
+        }
+        .jiaoyi-he{
+            width: 1205px;
+            margin: 0 auto;
+        }
+        .jiaoyi-he p{
+            text-align:left;
+            color: rgb(75,75,75);
+            font-size: 24px;
+            margin-bottom: 19px;
+            margin-top: 64px;
+        }
+        .jiaoyi-he .jiaoyi-sclo{
+            height: 167px;
+            overflow: hidden;
+            padding-bottom: 37px;
+        }
+        .jiaoyi-he .jiaoyi-sclo .swiper-slide{ 
+            box-sizing: border-box;
+            border:1px solid rgb(243,243,243);
+        }
+        .jiaoyi-sclo>.swiper-pagination-bullets .swiper-pagination-bullet{
+            margin: 0 0;
+        }
+        .swiper-container2>.swiper-pagination-bullets{
+            margin-top: 12px;
+        }
+        .jiaoyi-he .jiaoyi-sclo .swiper-slide a{
+            display: flex;
+            flex-direction: column;
+            color: rgb(75,75,75);
+            margin-left: 13px;
+            margin-top: 17px;
+        }
+        .jiaoyi-sclo .swi2-top{
+            display: flex;
+        }
+        .jiaoyi-sclo .swi2-top .tu-yuan{
+            background-color: aqua;
+            width: 51px;
+            height: 51px;
+            border-radius: 55%;
+            margin-right: 6px;
+        }
+        .swi2-top .jiaoyi-xingxi p{
+            /* margin-left: 4px; */
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 2px;
+            margin-bottom: 0;
+        }
+        .swi2-top .jiaoyi-xingxi .jiao-bb{
+            display: flex;
+            font-size: 25px;
+        }
+        .swi2-top .jiaoyi-xingxi .jiao-bb div:nth-child(2){
+            font-size: 18px;
+            color: rgb(152,152,152);
+            line-height: 34px;
+        }
+        .jiaoyi-sclo .swi2-pp{
+            font-size: 30px;
+            color: rgb(51,152,218);
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+        .jiaoyi-sclo .swi2-price{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .jiaoyi-sclo .swi2-price p{
+            margin:3px 0;
+            font-size: 14px;
+        }
+        .jiaoyi-sclo .swi2-price div{
+            margin-right: 13px;
+            font-size: 16px;
+            color: rgb(174,78,84);
+        }
+        .jiaoyi-sclo .swi2-price span{
+            display: inline-block;
+            margin-right: 5px;
+            border-bottom: 5px solid transparent;
+            border-top: 5px solid rgb(174,78,84);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+        }
+        .jiaoyi-sclo .ac-zhe span{
+            border-bottom: 5px solid transparent;
+            border-top: 5px solid rgb(51,152,218);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+        }
+        .jiaoyi-sclo .ac-zhe div{
+            margin-right: 13px;
+            font-size: 16px;
+            color: rgb(51,152,218);
+        }
+        #sclo .mass-hesder .ul li a{
+            color: rgb(255,255,255);
+        }
+        .bb-wrap{
+            width: 1205px;
+            margin: 0 auto;
+            margin-top: 54px;
+        }
+        .bb-wrap .bb-fri{
+            color: rgb(75,75,75);
+            font-size: 25px;
+            text-align: left;
+            padding-bottom: 27px;
+            border-bottom: 1px solid rgb(243,243,243);
+            margin-bottom: 29px;
+        }
+        .bb-tab .bbT-hea{
+            font-size: 16px;
+            color: rgb(48,48,48);
+            display: flex;
+            margin-bottom: 5px;
+        }
+        .bbT-hea .bbh1{
+            margin-right: 70px;
+        }
+        .bbT-hea .bbh2{
+            margin-right: 190px;
+        }
+        .bbT-hea .bbh3{
+            margin-right: 126px;
+        }
+        .bbT-hea .bbh4 {
+            margin-right: 133px;
+        }
+        .bbT-hea .bbh5{
+            margin-right: 139px;
+        }
+        .bbT-hea .bbh6 {
+            margin-right: 50px;
+        }
+        .bb-tab ul .bbT-li{
+            width: 1205px;
+            height: 55px;
+            color: rgb(56,56,56);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        .bb-tab ul .bbT-li .bb-child1{
+            display: flex;
+            font-size: 16px;
+            width: 114px;
+        }
+        .bb-tab ul .bbT-li .bb-child1 div:nth-child(1){
+            font-weight: 600;
+        }
+        .bb-tab ul .bbT-li .bb-child2{
+            display: flex;
+            width: 292px;
+        }
+        .bb-tab ul .bbT-li .bb-child2 div:nth-child(1){
+            color: rgb(51,152,218);
+        }
+        .bb-tab ul .bbT-li .bb-child3{
+            width: 207px;
+            text-align: left;
+        }
+        .bb-tab ul .bbT-li .bb-child4{
+            width: 211px;
+            text-align: left;
+        }
+        .bb-tab ul .bbT-li .bb-child5{
+            width: 190px;
+            text-align: left;
+        }
+        .bb-tab ul .bbT-li .bb-child6{
+            width: 115px;
+            text-align: left;
+            color: rgb(23,150,68);
+        }
+        .bb-tab ul .bbT-li .bb-child61{
+            color: rgb(211,16,16);
+        }
+        .bb-tab ul .bbT-li .bb-child7 img{
+            margin-left: 10px;
+        }
+        .bb-tab ul>a:nth-child(2n){
+            display: block;
+            background-color: rgb(249,250,254);
+        }
+        .bb-tab ul>a:nth-child(2n-1):hover{
+            display: block;
+            background-color: rgb(249,250,254);
+        }
+        .wrap-move{
+            min-width: 1205px;
+            width: 100%; 
+            background-color: rgb(244,247,252);
+            height: 480px;   
+            border-bottom: 1px solid rgb(203,218,234);
+            border-top: 1px solid rgb(203,218,234);
+        }
+        .wrap-move .lunb{
+            width: 1205px;
+            height: 480px; 
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        .lunb .lunb-left{
+            height: 287px;
+            width: 288px;
+            border: 1px solid rgb(229,229,229);
+            /* border-right: none; */
+            background-color: white;
+        }
+        .lunb-left p{
+            font-size: 25px;
+            color: rgb(53,53,53);
+            margin-top: 25px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgb(243,243,243);
+        }
+        .lunb-left .asset{
+            font-size: 16px;
+            color: rgb(124,124,124);
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 59px;
+            margin-right: 110px;
+        }
+        .lunb-left .asset:nth-child(2) span{
+            margin-right: -3px;
+        }
+        /* .lunb .over-to{
+            flex: 1; */
+            /* border: 1px solid red; */
+            /* height:  356px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        } */
+        .over-load{
+            height: 287px;
+            width: 297px;
+            border: 1px solid rgb(229,229,229);
+            border-left: none;
+            background-color: white;  
+            color: rgb(51,152,218);  
+            font-size: 18px;             
+        }
+        .over-load img{
+            margin-top: 50px;
+            margin-bottom: 41px;
+        }
+        .over-to .show-big{
+            width: 620px;
+            height: 356px;
+            background-color: white;
+            box-shadow: 1px 1px 2px 1px #888888;
+            z-index: 111;
+        }
+        .show-big .show-logo{
+            margin-top: 17px;
+            font-size: 18px;
+            color: rgb(51,152,218);
+        }
+        .show-logo img{
+            margin-bottom: 16px;
+        }
+        .show-big .show-tut{
+            display: flex;
+        }
+        .show-tut .show-xiatu img{
+            width: 151px;
+            height: 151px;
+            margin-left: 81px;
+        }
+        .show-tut .show-xiatu p{
+            font-size: 16px;
+            color: rgb(124,124,124);
+            margin-left: 86px;
+        }
+        .show-tut .show-right{
+            margin-left: 132px;
+            margin-top: 50px;
+        }
+        .show-tut .show-right a{
+            display: block;
+            width: 151px;
+            height: 44px;
+            background-color: rgb(51,152,218);
+            border-radius: 5px;
+            line-height: 44px;
+            color: white;
+            font-size: 18px;
+            margin-bottom: 26px;
+        }
+        .show-tut .show-right p{
+            color: rgb(124,124,124);
+            font-size: 16px;
+        }
+        .soci-qu{
+            min-width: 1205px;
+            width: 100%;
+            background-color: rgb(244,247,252);
+            /* height: 228px; */
+            padding-bottom: 10px;
+        }
+        .soci-wrap{
+            width: 1205px;
+            margin: 0 auto;
+        }
+        .soci-wrap .wrap-ss{
+            width: 1205px;
+            border-bottom: 1px solid rgb(243,243,243);
+            margin: 0 auto;
+            padding-bottom: 23px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 45px;
+        }
+        .wrap-ss .p-scol{
+            font-size: 25px;
+        }
+        .wrap-ss a{
+            font-size: 14px;
+            color: rgb(53,53,53);
+        }
+        .scoi-new{
+            margin-top: 24px;
+            display: flex;
+            /* padding-bottom: 20px; */
+        }
+        .scoi-new .ul-li{
+            flex: 1;
+        }
+        .scoi-new .ul-li a{
+            display:  flex;
+            align-items: center;
+            font-size: 14px;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+        .scoi-new .ul-li a .uiin-left{
+            display: flex;
+            align-items: center;
+        }
+        .scoi-new .ul-li a .uiin-left span{
+            width: 5px;
+            height: 5px;
+            background-color: rgb(112,112,112);
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .scoi-new .ul-li a .uiin-left p:nth-child(2){
+            color: rgb(51,152,218);
+            margin-right: 15px;
+        }
+        .scoi-new .ul-li a .uiin-left p:nth-child(3){
+            margin-right: 15px;
+        }
+        .p-end{
+            margin-right: 30px;
+        }
+        .logo-img{
+            min-width: 1205px;
+            width: 100%;
+            height: 390px;
+            background-color: rgb(24,95,141);
+        }
+        .logimg-wrap{
+            width: 1205px;
+            border: 1px solid transparent;
+            margin: 0 auto;
+            position: relative;
+        }
+        .logimg-wrap .regis-hea{
+            margin-top: 40px;
+            font-size: 25px;
+            color: rgb(255,255,255);
+        }
+        .logimg-wrap .btn-hanld{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 73px;
+            border-bottom: 1px solid white;
+        }
+        .logimg-wrap .btn-hanld a:nth-child(1){
+            width: 33px;
+            height: 40px;
+            background-color: rgb(51,152,218);
+            margin-right: 3px;
+        }
+        .logimg-wrap .btn-hanld a:nth-child(1) img{
+            width: 23px;
+            height: 23px;
+            margin-top: 8px;
+        }
+        .logimg-wrap .btn-hanld a:nth-child(2){
+            width: 198px;
+            height: 40px;
+            background-color: rgb(51,152,218);
+            line-height: 40px;
+            color: white;
+            font-size: 16px;
+        }
+        .span-pos{
+            position: absolute;
+            font-size: 25px;
+            color: white;
+            background-color: rgb(24,95,141);
+            top: 200px;
+            left: 550px;
+            padding: 0 20px;
+        }
+        .logo-tuImg{
+            width: 100%;
+            margin-top:53px;
+        }
+        .end-wrap{
+            min-width:1205px;
+            width: 100%;
+            height: 260px;
+            background-color: rgb(37,37,49);
+        }
+        .footer{
+            width:1205px;
+            border: 1px solid transparent;
+            margin: 0 auto;
+        }
+        .foot-logo{
+            border-bottom: 1px solid rgb(170,170,170);
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-bottom: 19px;
+        }
+        .logo-much{
+            margin-top: 25px;
+        }
+        .logo-much .span-wrap{
+            margin-left: 19px;
+            cursor: pointer;
+            position: relative;
+        }
+        .piao-pos{
+            display: none;
+            position: absolute;
+            width: 150px;
+            height: 100px;
+            background-color: red;
+            top: -120px;
+            left: -60px;
+        }
+        /* .logo-much .span-wrap:hover .piao-pos{
+            display: block;
+        } */
+        .footer-end{
+            display: flex;
+            margin-top: 22px;
+            font-size: 14px;
+            color: rgb(207,208,228);
+        }
+        .footer-end .end-1 {
+            display: flex;
+        }
+        .footer-end .end-1 .end-le1{
+            margin-right: 10px;
+        }
+        .footer-end .end-2{
+            flex: 1;
+        }
+        .footer-end .end-2 .end-ma1 a{
+            color: rgb(207,208,228);
+            margin-left: 27px;
+        }
+        .footer-end .end-2 .end-ma1{
+            margin-bottom: 60px;
+        }
+        .pp-mas{
+            margin-bottom: 10px;
+        }
+        .footer-end .end-3>div{
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .footer-end .end-3>div>p{
+            display: inline-block;
+            text-align: right;
+        }
+        .footer-end .end-3>div>p:nth-child(2){
+            margin-left: 30px;
+
+        }
+
+
+        .card-area{margin:70px auto 0;height:356px;width:916px;position:relative;}
+        .card-area .card-item{z-index:4;transition:all .3s cubic-bezier(.4,0,.2,1),z-index 0s .12s;position:relative;float: right;width:32%;height:287px;background-color:transparent}
+        .card-area .card-item+.card-item{margin-left:-1px}
+        .card-area .card-item.active{z-index:6;box-shadow:0 0 30px rgba(0,0,0,.2);width:620px;height:356px;top:-32px;}
+        .card-area .card-item .card .card-title .content{position:absolute;bottom:-2px;width:100%; height:65px; filter:alpha(opacity=100); -ms-filter:progid:DXImageTransform.Microsoft.Alpha(opacity=(100))}
+        .card-area .card-item.active .card .card-title{height:65px;top:-15px;border:none;background-color:white;}
+        .iosand{
+            color: rgb(51,152,218);
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .card .card-title img{
+            margin-top: 50px;
+        }
+        .card-area .card-item.active .card .card-title img{
+            margin-top: 17px;
+        }
+        .card-area .card-item.active .card .card-title .iosand{
+            margin-top: 13px;
+        }
+        .main-info ul .show-tut1{
+            transition:all .12s cubic-bezier(.4,0,.2,1) 0.18s;
+            display: flex;
+            margin-left:65px;
+            filter:alpha(opacity=100); -ms-filter:progid:DXImageTransform.Microsoft.Alpha(opacity=(100))
+        }
+        .main-info ul .show-tut1 .show-xiatu1{
+            margin-top: 50px;
+            
+        }
+        .main-info ul .show-tut1 .show-xiatu1 img{
+            width: 161px;
+            height: 161px;
+        }
+        .main-info ul .show-tut1 .show-xiatu1 .P-TWO{
+            margin-left: 46px;
+            margin-top: -8px;
+        }
+        .show-right1{
+            margin-left: 132px;
+        }
+        .show-right1 a{
+            display: block;
+            height: 44px;
+            width: 151px;
+            background-color: rgb(51,152,218);
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 44px;
+            margin-top: 107px;
+            
+        }
+        .show-right1 div{
+            margin-top: 20px;
+        }
+        /* .card-area .card-item .card .card-title .content{position:absolute;bottom:-2px;width:100%; height:65px;border-bottom:1px solid #cecece; filter:alpha(opacity=100); -ms-filter:progid:DXImageTransform.Microsoft.Alpha(opacity=(100))} */
+    </style>
+</head>
+<body>
+    <div class="banner_wrap">
+        <div class="nav">
+            <div class="wrap-nav">
+                <img src="./img/logo.png" alt="">
+                <div class="handle-go">
+                    <div class="nav-li">
+                        <ul>
+                            <img class="nav-huol" src="./img/huo.png" alt="">
+                            <a href="##">
+                                <li>合约交易</li>
+                            </a>
+                            <a href="##">
+                                <li>法币交易</li>
+                            </a>
+                            <a href="##">
+                                <li>币币交易</li>
+                            </a>
+                            <a href="##">
+                                <li>策略社区</li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="nav-golo">
+                        <ul>
+                            <li>
+                                <a class="img-nav" href="##">
+                                    <img src="./img/radio.png" alt="">
+                                    <div>教程</div>
+                                </a>
+                            </li>
+                            <li class="nav-spans">
+                                <div id="clickHanld">
+                                    language
+                                    <span></span>
+                                </div>
+                                <div class="nav-displayn">
+                                    <p>
+                                        <a href="##">简体中文</a>
+                                    </p>
+                                    <p>
+                                        <a href="##">繁体中文</a>
+                                    </p> 
+                                    <div>
+                                        <a href="##">English</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="loginre "><a href="##">注册</a><a href="##">登录</a></li>
+                            <li class="loginre1 ac"><a href="##">您好：</a><a href="##">XXX</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap-tusw">
+            <img src="./img/font.png" alt="">
+        </div>
+        <div class="wrap-goreglo">
+            <!-- <span>
+                <a href="##">注册</a>|<span>已经注册？</span>
+            </span>
+            <span>
+                立即<a href="##">登录</a>
+            </span> -->
+            专注数字货币衍生品交易所
+        </div>
+        <div class="swri-lunbo swiper-container">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                        1
+                </li>
+                <li class="swiper-slide">
+                    2
+                </li>
+                <li class="swiper-slide">
+                        3
+                </li>
+                <li class="swiper-slide">
+                    4
+                </li>
+                <li class="swiper-slide">
+                        5
+                </li>
+                <li class="swiper-slide">
+                    6
+                </li>
+                <li class="swiper-slide">
+                        7
+                </li>
+                <li class="swiper-slide">
+                    8
+                </li>
+                <li class="swiper-slide">
+                    9
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="Massge-gun" id="sclo">
+            <div class="mass-hesder">
+                <span>新闻</span><span>:</span>
+                <ul class="ul">
+                    <div :style="{ top }">
+                        <li><a href="##">12314</a></li>
+                        <li>www</li>
+                        <li>都是范德萨dssdsds</li>
+                    </div>
+                </ul>
+            </div>
+            <div class="mass-hesder">
+                <span>新闻</span><span>:</span>
+                <ul class="ul">
+                    <div :style="{ top }">
+                        <li><a href="##">12314</a></li>
+                        <li>www</li>
+                        <li>都是范德萨dssdsds</li>
+                    </div>
+                </ul>
+            </div>
+            <div class="mass-hesder">
+                <span>新闻</span><span>:</span>
+                <ul class="ul">
+                    <div :style="{ top }">
+                        <li><a href="##">12314</a></li>
+                        <li>www</li>
+                        <li>都是范德萨dssdsds</li>
+                    </div>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    <div class="wrap-two"  id="swip-data">
+        <div class="jiaoyi-he">
+            <p>合约交易</p>
+            <div class="jiaoyi-sclo swiper-container2">
+                <ul  class="swiper-wrapper" >
+                    <li class="swiper-slide" v-for="(item,index) in nameData" :key="index">
+                        <a href="##">
+                            <div class="swi2-top">
+                                <div class="tu-yuan">图</div>  
+                                <div class="jiaoyi-xingxi">
+                                    <div class="jiao-bb">
+                                        <div>{{item.title}}</div>
+                                        <div>/{{item.unit}}</div>
+                                    </div>
+                                    <p>{{item.title+' 市场指数'}}</p>
+                                </div>
+                            </div>
+                            <p class="swi2-pp">{{item.new_price}}</p>
+                            <div :class="['swi2-price',item.change<0 ? '':'ac-zhe']">
+                                <p>{{'￥'+item.jia}}</p>
+                                <div><span></span>{{item.change+'%'}}</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="swiper-pagination2"></div>
+            </div>
+        </div>
+        <div class="bb-wrap" id="main-tra">
+            <p class="bb-fri">币币交易</p>
+            <div class="bb-tab">
+                <div class="bbT-hea">
+                    <div class="bbh1">交易对</div>
+                    <div class="bbh2">最新价格/CNY</div>
+                    <div class="bbh3">今日最高价</div>
+                    <div class="bbh4">今日最低价</div>
+                    <div class="bbh5">成交量</div>
+                    <div class="bbh6">日涨跌幅</div>
+                    <div class="bbh7">去交易</div>
+                </div>
+                <ul>
+                    <a  v-for='(ite,ind) in bbData' :key="ind" href="##" >
+                        <li class="bbT-li">
+                            <div class="bb-child1">
+                                <div>{{ite.title}}</div>
+                                <div>/{{ite.unit}}</div>
+                            </div>
+                            <div class="bb-child2">
+                                <div>{{ite.new_price}}/</div>
+                                <div>￥{{ite.jia}}</div>
+                            </div>
+                            <div class="bb-child3">{{ite.max_price}}</div> 
+                            <div class="bb-child4">{{ite.min_price}}</div>
+                            <div class="bb-child5">1232141</div>
+                            <div :class="['bb-child6',ite.change<0 ? 'bb-child61' :'']">{{ite.change<0 ?ite.change : '+'+ite.change}}%</div> 
+                            <div class="bb-child7"><img src="./img/copy.png" alt=""></div>
+                        </li>
+                    </a>
+                    <!-- <a href="##">
+                        <li class="bbT-li">
+                            <div class="bb-child1">
+                                <div>ETH</div>
+                                <div>/BTC</div>
+                            </div>
+                            <div class="bb-child2">
+                                <div>12354654222232645/</div>
+                                <div>￥4612554848</div>
+                            </div>
+                            <div class="bb-child3">1232141312342341</div> 
+                            <div class="bb-child4">1232141</div>
+                            <div class="bb-child5">1232141</div>
+                            <div class="bb-child6">1232141</div> 
+                            <div class="bb-child7"><img src="./img/copy.png" alt=""></div>
+                        </li>
+                    </a>
+                    <a href="##">
+                        <li class="bbT-li">
+                            <div class="bb-child1">
+                                <div>ETH</div>
+                                <div>/BTC</div>
+                            </div>
+                            <div class="bb-child2">
+                                <div>12354654222232645/</div>
+                                <div>￥4612554848</div>
+                            </div>
+                            <div class="bb-child3">1232141312342341</div> 
+                            <div class="bb-child4">1232141</div>
+                            <div class="bb-child5">1232141</div>
+                            <div class="bb-child6">1232141</div> 
+                            <div class="bb-child7"><img src="./img/copy.png" alt=""></div>
+                        </li>
+                    </a> -->
+                </ul>
+                <div style="margin:20px 0;">
+                    <a href="##" style="margin-right:20px">
+                        <img src="./img/left1.png" alt="" >
+                    </a>
+                    <a href="##">
+                        <img src="./img/right2.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap-move">
+        <div class="lunb">
+                <!-- <ul id="cardArea" class="card-area clearfix">
+                        <li class="card-item">
+                            <div class="card">
+                                <div class="card-title title-even">
+                                    <div class="content"><h1>店铺入驻</h1></div>
+                                </div>
+                                <div class="card-content content-first">
+                                    <div style="padding:50px;">结合大数据能力，帮助企业快速搭建各大电商平台</div>
+                                </div>
+                                <div class="card-content content-second">
+                                    <div class="main-info">
+                                        <ul>
+                                            <li>
+                                                <div class="left">
+                                                    <p class="tit">店铺购买</p>
+                                                    <p class="hys">国内专业店铺交易平台</p>
+                                                </div>
+                                                <div class="right">
+                                                    <button>查看详情</button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left">
+                                                    <p class="tit">店铺评估/出售</p>
+                                                    <p class="hys">由专业人员进行评估、交易</p>
+                                                </div>
+                                                <div class="right">
+                                                    <button>查看详情</button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card-item active">
+                            <div class="card">
+                                <div class="card-title title-even">
+                                    <div class="content"><h1>店铺交易</h1></div>
+                                </div>
+                                <div class="card-content content-first">
+                                    <div style="padding:50px;">结合大数据能力，帮助企业快速搭建各大电商平台</div>
+                                </div>
+                    
+                                <div class="card-content content-second">
+                                    <div class="main-info">
+                                        <ul>
+                                            <li>
+                                                <div class="left">
+                                                    <p class="tit">店铺购买</p>
+                                                    <p class="hys">国内专业店铺交易平台</p>
+                                                </div>
+                                                <div class="right">
+                                                    <button>查看详情</button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left">
+                                                    <p class="tit">店铺评估/出售</p>
+                                                    <p class="hys">由专业人员进行评估、交易</p>
+                                                </div>
+                                                <div class="right">
+                                                    <button>查看详情</button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card-item">
+                            <div class="card">
+                                <div class="card-title title-even">
+                                    <div class="content"><h1>电商与业务</h1></div>
+                                </div>
+                                <div class="card-content content-first">
+                                    <div style="padding:50px;">结合大数据能力，帮助企业快速搭建各大电商平台</div>
+                                </div>
+                    
+                                <div class="card-content content-second">
+                                    <div class="main-info">
+                                        <ul>
+                                            <li>
+                                                <div class="left">
+                                                    <p class="tit">店铺购买</p>
+                                                    <p class="hys">国内专业店铺交易平台</p>
+                                                </div>
+                                                <div class="right">
+                                                    <button>查看详情</button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left">
+                                                    <p class="tit">店铺评估/出售</p>
+                                                    <p class="hys">由专业人员进行评估、交易</p>
+                                                </div>
+                                                <div class="right">
+                                                    <button>查看详情</button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul> -->
+            <div class="lunb-left">
+                <p>多平台终端交易</p>
+                <div class="asset">
+                    <img src="./img/sev.png" alt="">
+                    <span>安全交易</span>
+                </div>
+                <div class="asset">
+                    <img src="./img/yun.png" alt="">
+                    <span>API防护 </span>
+                </div>
+                <div class="asset">
+                    <img src="./img/go.png" alt="">
+                    <span>及时行情</span>
+                </div>
+            </div>
+            <ul id="cardArea" class="card-area clearfix">
+                <li class="card-item active">
+                    <div class="card">
+                        <div class="card-title title-even">
+                                <img src="./img/ios.png" alt="">
+                                <div class="iosand">IOS 下载</div>
+                        </div>
+                        <div class="card-content content-second">
+                            <div class="main-info">
+                                <ul>
+                                    <div class="show-tut1">
+                                        <div class="show-xiatu1">
+                                            <img src="./img/twoM.png" alt="">
+                                            <div class="P-TWO">二维码下载</div>
+                                        </div>
+                                        <div class="show-right1" >
+                                            <a href="##">APK 下载</a>
+                                            <div>下载APK安装包至电脑</div>
+                                        </div>
+                                    </div>
+                                    <!-- <li>
+                                        <div class="left">
+                                            <p class="tit">店铺购买</p>
+                                            <p class="hys">国内专业店铺交易平台</p>
+                                        </div>
+                                        <div class="right">
+                                            <button>查看详情</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="left">
+                                            <p class="tit">店铺评估/出售</p>
+                                            <p class="hys">由专业人员进行评估、交易</p>
+                                        </div>
+                                        <div class="right">
+                                            <button>查看详情</button>
+                                        </div>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="card-item">
+                    <div class="card">
+                        <div class="card-title title-even">
+                            <img src="./img/andd.png" alt="">
+                            <div class="iosand">Android 下载</div>
+                        </div>
+                        <div class="card-content content-second">
+                            <div class="main-info">
+                                <ul>
+                                    <div class="show-tut1">
+                                        <div class="show-xiatu1">
+                                            <img src="./img/twoM.png" alt="">
+                                            <div class="P-TWO">二维码下载</div>
+                                        </div>
+                                        <div class="show-right1" >
+                                            <a href="##">APK 下载</a>
+                                            <div>下载APK安装包至电脑</div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- <div class="over-load" v-show='! isShowand' @mouseenter="enterGo(1)">
+                    <img src="./img/andd.png" alt="">
+                    <div>Android 下载</div>
+                </div>
+                <div class='show-big' v-show='isShowand'>
+                    <div class="show-logo" >
+                        <img src="./img/andd.png" alt="">
+                        <div>Android 下载</div>
+                    </div>
+                    <div class="show-tut">
+                        <div class="show-xiatu">
+                            <img src="./img/twoM.png" alt="">
+                            <p>二维码下载</p>
+                        </div>
+                        <div class="show-right" >
+                            <a href="##">APK 下载</a>
+                            <p>下载APK安装包至电脑</p>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="over-load" v-show='isShowios' @mouseenter="enterGo(2)">
+                    <img src="./img/ios.png" alt="">
+                    <div>IOS 下载</div>
+                </div>
+                <div class='show-big' v-show='! isShowios'>
+                    <div class="show-logo" >
+                        <img src="./img/ios.png" alt="">
+                        <div>IOS 下载</div>
+                    </div>
+                    <div class="show-tut">
+                        <div class="show-xiatu">
+                            <img src="./img/twoM.png" alt="">
+                            <p>二维码下载</p>
+                        </div>
+                        <div class="show-right" >
+                            <a href="##">APK 下载</a>
+                            <p>下载APK安装包至电脑</p>
+                        </div>
+                        
+                    </div>
+                </div> -->
+            </ul>
+        </div>
+    </div>
+    <div class="soci-qu">
+        <div class="soci-wrap">
+            <div class="wrap-ss">
+                <p class="p-scol">策略社区</p>
+                <a href="##">查看更多>></a> 
+            </div>
+            <div class="scoi-new">
+                <div class="ul-li">
+                    <a>
+                        <div class="uiin-left">
+                            <span></span>
+                            <p>[ 阿斯顿发生 ]</p>
+                            <p>啥的发送到发送到胜cgbgfcgfd多负少的</p>
+                        </div>
+                        <p class="p-end">分区： [趋势类策略]</p>
+                    </a>
+                    <a>
+                        <div class="uiin-left">
+                            <span></span>
+                            <p>[ 阿斯顿发生 ]</p>
+                            <p>啥的发送到发送到胜多负少的</p>
+                        </div>
+                        <p class="p-end">分区： [趋势类策略]</p>
+                    </a>
+                    <a>
+                        <div class="uiin-left">
+                            <span></span>
+                            <p>[ 阿斯顿发生 ]</p>
+                            <p>啥的发送到发送到胜多负少的</p>
+                        </div>
+                        <p class="p-end">分区： [趋势类策略]</p>
+                    </a>
+                    <a>
+                        <div class="uiin-left">
+                            <span></span>
+                            <p>[ 阿斯顿发生 ]</p>
+                            <p>啥的发送到发送到胜多负少的</p>
+                        </div>
+                        <p class="p-end">分区： [趋势类策略]</p>
+                    </a>
+                </div>
+                <div class="ul-li">
+                        <a>
+                            <div class="uiin-left">
+                                <span></span>
+                                <p>[ 阿斯顿发生 ]</p>
+                                <p>啥的发送到发送到胜cgbgfcgfd多负少的</p>
+                            </div>
+                            <p class="p-end">分区： [趋势类策略]</p>
+                        </a>
+                        <a>
+                            <div class="uiin-left">
+                                <span></span>
+                                <p>[ 阿斯顿发生 ]</p>
+                                <p>啥的发送到发送到胜多负少的</p>
+                            </div>
+                            <p class="p-end">分区： [趋势类策略]</p>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logo-img">
+        <div class="logimg-wrap">
+            <p class="regis-hea">立即注册开始交易</p>
+            <div class="btn-hanld">
+                <a href="##"><img src="./img/logrei.png" alt=""></a>
+                <a href="##">创建账户</a>
+            </div>
+            <span class="span-pos">投资者</span>
+            <div class="logo-tuImg">
+                <img src="./img/c1.png" alt="">
+                <img src="./img/c2.png" alt="">
+                <img src="./img/c3.png" alt="">
+                <img src="./img/c4.png" alt="">
+                <img src="./img/c5.png" alt="">
+                <img src="./img/c6.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="end-wrap">
+        <div class="footer">
+            <div class="foot-logo">
+                <img src="./img/logo.png" alt="">
+                <div class="logo-much">
+                    <span class="span-wrap">
+                        <img src="./img/twitter.png" alt="">
+                        <span class="piao-pos"></span>
+                    </span>
+                    <span class="span-wrap">
+                        <img src="./img/plane.png" alt="">
+                        <span class="piao-pos"></span>
+                    </span>
+                    <span class="span-wrap">
+                        <img src="./img/weibo.png" alt="">
+                        <span class="piao-pos"></span>
+                    </span>
+                    <span class="span-wrap">
+                        <img src="./img/QQ.png" alt="">
+                        <span class="piao-pos"></span>
+                    </span>
+                    <span class="span-wrap">
+                        <img src="./img/weix.png" alt="">
+                        <span class="piao-pos"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="footer-end">
+                <div class="end-1">
+                    <div class="end-le1">因为专注</div>
+                    <div class="end-le2">所以卓越</div>
+                </div>
+                <div class="end-2">
+                    <div class="end-ma1">
+                        <a href="##">上币申请</a>
+                        <a href="##">用户协议</a>
+                        <a href="##">隐私协议</a>
+                        <a href="##">费率说明</a>
+                    </div>
+                    <p class="pp-mas">CG.NET由新加坡深网科技版权所有, 不向中国大陆地区提供交易服务</p>
+                    <p>©2017-2018 深网科技 All Rights Reserved</p>
+                </div>
+                <div class="end-3">
+                    <div>
+                        <p>791194237@qq.com</p>
+                        <p>商务邮箱</p>
+                    </div>
+                    <div>
+                        <p>service@cg.net</p>
+                        <p class="email-end">客服邮箱</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+
+    <script>
+        $(function(){
+            //杨欢
+            $("#cardArea").cardArea()
+
+
+
+            //点击语言
+            $("#clickHanld").on("click",function(event){
+                event.stopPropagation();
+                $(".nav-displayn").toggle()
+            })
+            $(document).on("click",function(){
+                $(".nav-displayn").hide()
+            })
+            $(".nav-displayn").on("click",function(e){
+                e.stopPropagation();
+            })
+            //轮播
+            var mySwiper = new Swiper ('.swiper-container', {
+                speed:1000,
+                autoplay:true,
+                autoplay: {
+                    disableOnInteraction: false,
+                },
+                loop: true, // 循环模式选项
+                // 如果需要分页器
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable :true,
+                },
+
+                // centerInsufficientSlides: true,
+                // grabCursor : true,
+                uniqueNavElements: false,
+                watchOverflow: true,
+                slidesPerView : 4,
+                slidesPerGroup : 4,
+                spaceBetween : 30,
+                freeMode : false,
+                freeModeMomentumBounce : false,
+                preventClicks : true,
+                preventLinksPropagation : true,
+                type : 'custom',
+            })
+            mySwiper.el.onmouseover = function(){
+                mySwiper.autoplay.stop();
+            }
+            mySwiper.el.onmouseleave = function () {
+                mySwiper.autoplay.start();
+            }
+            //轮播
+            var mySwiper2 = new Swiper ('.swiper-container2', {
+                speed:1000,
+                autoplay:true,
+                autoplay: {
+                    disableOnInteraction: false,
+                },
+                loop: true, // 循环模式选项
+                // 如果需要分页器
+                pagination: {
+                    el: '.swiper-pagination2',
+                    // type: 'bullets',
+                    // type : 'custom',
+                    clickable :true,
+                },
+
+                setWrapperSize :true,
+                roundLengths : true, //q去整
+                autoHeight: true, //高度随内容变化
+                // init: false,//禁止初始化
+                updateOnImagesReady : true,
+                uniqueNavElements: true,//当所有的内嵌图像（img标签）加载完成后Swiper会重新初始化
+                // spaceBetween : 20,在slide之间设置距离（单位px）。
+                // centerInsufficientSlides: true,//开启这个参数，当slides的总数小于slidesPerView时，slides居中。
+                // preventInteractionOnTransition : true,切换时滑动无效直到切换结束
+
+
+                watchOverflow: true,//因为仅有1个slide，swiper无效
+                slidesPerView : 4,
+                slidesPerGroup : 4,
+                loopedSlides: 6,
+                loopAdditionalSlides : 4,
+                spaceBetween : 37,
+                freeMode : false,
+                freeModeMomentumBounce : false,
+                preventClicks : true,
+                preventLinksPropagation : true,
+                paginationtype : 'custom',
+                initialSlide :0,
+                observer: true,
+                observeParents: true,
+                observeSlideChildren:true,
+                // onSlideChangeEnd: function(swiper){ 
+                // 　　　swiper.update();  
+                // 　　　mySwiper.startAutoplay();
+                // 　　   mySwiper.reLoop();  
+                // }
+            })
+            // mySwiper2.pagination.render()
+            // mySwiper.pagination.update()
+            mySwiper2.el.onmouseover = function(){
+                mySwiper2.autoplay.stop();
+            }
+            mySwiper2.el.onmouseleave = function () {
+                mySwiper2.autoplay.start();
+            }
+            mySwiper2.updateProgress()
+        })   
+        new Vue({
+            el: '#swip-data',
+            data: {
+                nameData: [],
+                timer1:null,
+                bbData:[]
+            },
+            created(){
+                var _this=this;
+                this.getLly();
+                this.timer=setInterval(function(){
+                    _this.getLly();
+                },2000)
+            },
+            destroyed(){
+                this.timer1=null;
+            },
+            methods:{
+                getLly:function(){
+                    var _this=this;
+                    $.ajax({
+                        url:'https://cg.net/Ajax/getCoinInfoNew',
+                        type: "POST",
+                        dataType:"json",
+                        timeout:50000,
+                        success: function(msg){
+                            //合约交易
+                            var data=msg.extendCoinArr;
+                            var dada=[];
+                            for(var i=0;i<data.length;i++){
+                                data[i].title=data[i].title.split("/")[0]
+                                dada.push(data[i])
+                            }
+                            _this.nameData=dada.concat(dada.slice(0,4));
+                            _this.nameData=(dada.slice(dada.length-4)).concat( _this.nameData);
+                            //币币交易
+                            var bbDatam=msg.mainCoinArr;
+                            _this.bbData=[];
+                            for(var i=0;i<bbDatam.length;i++){
+                                bbDatam[i].title=bbDatam[i].title.split("/")[0]
+                                _this.bbData.push(bbDatam[i])
+                            }
+                        }
+                    })
+                }
+            }
+        })
+        //新闻
+        new Vue({
+            el: '#sclo',
+            data: {
+                activeIndex: 0
+            },
+            computed: {
+                top() {
+                return - this.activeIndex * 22 + 'px';
+                }
+            },
+            mounted() {
+                setInterval(_ => {
+                if(this.activeIndex < 2) {
+                    this.activeIndex += 1;
+                } else {
+                    this.activeIndex = 0;
+                }
+                }, 2000);
+            },
+            created(){
+            },
+            methods:{
+            }
+        })
+
+
+        //杨欢
+        // new Vue({
+        //     el: '#ovsh-out',
+        //     data: {
+        //         isShowios:true,
+        //         isShowand:true
+        //     },
+        //     methods:{
+        //         //鼠标进入
+        //         enterGo:function(dat){
+        //             if(dat===2){
+        //                 this.isShowand=false;
+        //                 this.isShowios=false;
+        //                 return;
+        //             }
+        //             if(dat===1){
+        //                 this.isShowand=true;
+        //                 this.isShowios=true;
+        //                 return;
+        //             }
+        //         },
+        //     }
+        // })
+
+
+
+    </script>
+</body>
+</html>

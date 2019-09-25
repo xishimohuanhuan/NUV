@@ -1,0 +1,1 @@
+export { default as cutDownIMG } from './cutDownIMG.js'

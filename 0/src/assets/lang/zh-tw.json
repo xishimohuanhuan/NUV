@@ -1,0 +1,48 @@
+{
+  "language": "繁体中文",
+  "tit": {
+    "notice": "公告",
+    "goods": "合约现货",
+    "main": "幣幣行情",
+    "card": "通证区"
+  },
+  "foot": "QSQ 由新加坡深網科技版權所有，不向中國大陸地區提供交易服務",
+  "menu": {
+    "home": "首頁",
+    "market": "行情",
+    "transaction": "交易",
+    "legalTender": "法幣",
+    "my": "我的"
+  },
+  "notice": {
+    "default": "暫無公告信息！",
+    "noticeDetail": "公告詳情",
+    "viewMoreNotice": "查看更多公告",
+    "noNoticeList": "暫無列表信息",
+    "noNoticeDetail": "暫無公告信息",
+    "moreNotice": "詳情"
+  },
+  "redPacket": {
+    "message": "仿真交易模擬盤",
+    "poptip": "來就送10000 USDT",
+    "operate": "立即領取"
+  },
+  "refreshLoading": {
+    "firstStep": "下拉可以刷新",
+    "secondStep": "釋放立即刷新",
+    "thirdStep": "正在刷新",
+    "fourthStep": "刷新完成"
+  },
+  "quotation": {
+    "quotation": "行情",
+    "HBMain": "主板",
+    "HBNext": "創業板",
+    "contract": "合約",
+    "name": "名稱",
+    "marketPrice": "最新價",
+    "change": "24h漲跌"
+  },
+  "marketData": {
+    "volumn": "24h額￥"
+  }
+}

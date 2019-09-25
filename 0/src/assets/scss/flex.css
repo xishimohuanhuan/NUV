@@ -1,0 +1,79 @@
+/*flex 布局*/
+.flex-row,
+.flex-col {
+    display: flex !important;
+}
+.flex-row {flex-direction: row;}
+.flex-col {flex-direction: column;}
+
+/*流式布局*/
+.flex-parent {
+    width: auto;
+    height: auto;
+    display: flex !important;
+    flex-flow: row wrap;
+    align-content: flex-start;
+}
+.flex-child {
+    box-sizing: border-box;
+    flex: 0 0 25%;
+}
+
+
+/*对齐*/
+.flex-row.flex-left {justify-content: flex-start;}
+.flex-row.flex-right {justify-content: flex-end;}
+.flex-row.flex-center {justify-content: center;}
+.flex-row.flex-top {align-items: flex-start;}
+.flex-row.flex-bottom {align-items: flex-end;}
+.flex-row.flex-middle {align-items: center;}
+
+.flex-col.flex-left {align-items: flex-start;}
+.flex-col.flex-right {align-items: flex-end;}
+.flex-col.flex-top {justify-content: flex-start;}
+.flex-col.flex-bottom {justify-content: flex-end;}
+.flex-col.flex-center {align-items: center;}
+.flex-col.flex-middle {justify-content: center;}
+
+.box-base{align-content: baseline;}
+.box-space,.box-space1{
+    display: flex;
+    justify-content: space-between;
+}
+.box-space1{
+    align-items: center;
+}
+.box-center {
+    flex-direction: column;
+}
+.box-middle,.box-center {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.zsx-toast-shade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+.zsx-toast-shade .zsx-normal-toast {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    padding: 30px 80px;
+    width: fit-content;
+    height: 26px;
+    line-height: 26px;
+    font-size: 26px;
+    color: #fff;
+    box-sizing: content-box;
+    border-radius: 10px;
+    background-color: rgba(67, 67, 67, 0.6);
+}

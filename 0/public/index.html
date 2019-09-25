@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>QSQ</title>
+</head>
+
+<body style="overflow:hidden;background-color: #fff;">
+  <noscript>
+    <strong>We're sorry but CG doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script>
+    (function (w) {
+      var _ua = w.navigator.userAgent,
+        isMobile = _ua.toLowerCase().match(/(ipod|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null;
+      if (!isMobile) {
+        w.location.href = location.pathname === '/phoneLogin' ? ("https://qsq.com/login" + location.search) : ("https://qsq.com" + location.search);
+        return;
+      }
+    })(window);
+    // android APP
+    function clickSell(coinName,flag) {
+      if(flag) {
+        location.href = 'https://wap.qsq.com/transaction/'+coinName+'/main?type=fall&lang=zh-cn';
+      } else {
+        location.href = location.href = 'https://wap.qsq.com/trade/'+coinName+'/tradesell?key=' + coinName + '&lang=zh-cn';
+      }
+    }
+    function clickBuy(coinName, flag) {
+      if(flag) {
+        location.href = 'https://wap.qsq.com/transaction/'+coinName+'/main?type=rose&lang=zh-cn';
+      } else {
+        location.href = location.href = 'https://wap.qsq.com/trade/'+coinName+'/tradebuy?key=' + coinName + '&lang=zh-cn';
+      }
+    }
+    function quickLogin() {
+      location.href = 'https://wap.qsq.com/phoneLogin';
+    }
+    function refreshH5() {
+      location.reload();
+    }
+  </script>
+</body>
+<style>
+  #trading #ant .diy .tabnav{
+    align-items: baseline;
+  }
+  .van-slider__button {
+    background-color: #3e80ca;
+    width: 12px;
+    height: 12px;
+  }
+
+  .van-slider__bar {
+    height: 5px !important;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+</html>

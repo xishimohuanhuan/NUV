@@ -1,0 +1,242 @@
+
+body,
+html {
+    font-family: PingFang SC, Microsoft Yahei, PingHei, Helvetica Neue, Helvetica, STHeitiSC-Light, Arial, sans-serif;
+    background-color: #f8f8f8;
+    height: 100%;
+    color: #5a5a5a;
+    /*上下拉动滚动条时卡顿、慢*/
+    -webkit-overflow-scrolling : touch;
+    // -webkit-overflow-scrolling : auto;
+}
+#app{
+    height: 100%;
+    background-color: #f8f8f8;
+    padding-bottom: 0  !important;
+    padding-bottom: constant(safe-area-inset-bottom) !important;
+    padding-bottom: env(safe-area-inset-bottom) !important;
+}
+#app::after{
+    position: absolute;
+    content:'';
+    background:#fff;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    height:constant(safe-area-inset-bottom) !important;
+    height: env(safe-area-inset-bottom) !important;
+}
+
+
+.warp {
+    height: 100%;
+    .views {
+        position: relative;
+        height: 100%;
+        box-sizing: border-box;
+        //  padding-bottom: 50px;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        iframe{
+            width: 100%;
+            height: 100%;
+        }
+        .address{
+            background: #fff;
+            padding-bottom: 100%;
+        }
+        .no-other-data{
+            color: #aaa;
+            margin-top: 24px;
+        }
+    }
+}
+
+/**/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-touch-callout:text;
+    -webkit-user-select:text;
+    -khtml-user-select:text;
+    -moz-user-select:text;
+    -ms-user-select:text;
+    user-select:text;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+    width: inherit;
+    height: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+.bgf{background: #fff;}
+
+
+/**/
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.hide {
+    display: none;
+}
+
+
+/* vue transition 过渡*/
+
+.fade-down-enter-active,
+.fade-down-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-down-enter,
+.fade-down-leave-active {
+    opacity: 0;
+}
+
+.fold-enter-active {
+    animation-name: fold-in;
+    animation-duration: .5s;
+}
+
+.fold-leave-active {
+    animation-name: fold-out;
+    animation-duration: .5s;
+}
+
+.fade-img-enter-active,
+.fade-img-leave-active {
+    transition: all 1s ease;
+}
+
+.fade-img-enter,
+.fade-img-leave-active {
+    opacity: 0
+}
+
+.fadeZone-enter-active,
+.fadeZone-leave-active {
+    transition: all 10s ease;
+}
+
+.fadeZone-enter,
+.fadeZone-leave-active {
+    opacity: 0
+}
+
+@keyframes fold-in {
+    0% {
+        transform: translate3d(0, 100%, 0);
+    }
+    50% {
+        transform: translate3d(0, 50%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fold-out {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, 50%, 0);
+    }
+    100% {
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text-danger {
+    color: #ff1c1c!important;
+}
+
+.text-required-flag {
+    @extend .text-danger;
+    position: absolute;
+    left: 5px;
+}
+
+.label-money {
+    color: #ff1c1c!important;
+}
+
+.label-money-volume {
+    color: #ee893e!important;
+}
+
+.wybc-toolbar {
+    text-align: center;
+    padding: 5px 15px;
+}
+
+::-webkit-input-placeholder {
+    color: #b3b3b3;
+}
+
+.text-placeholder {
+    color: #b3b3b3;
+    font-family: initial;
+}
+
+.error-tip {
+    font-size: 12px;
+    margin-left: 120px;
+}
+
+.address-info {
+    span {
+        margin-right: 5px;
+    }
+}
+
+.layout-ft {
+    position: absolute;
+    right: 15px;
+}
+
+//适配iPhone X
+.custom-footer{
+    bottom: 0 !important;
+    bottom: constant(safe-area-inset-bottom) !important;
+    bottom: env(safe-area-inset-bottom) !important;
+}
+
+// 去除 IOS移动端点击阴影
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+// 帮助中心
+.drop{
+    *{
+        max-width: 100% !important;
+    }
+}
