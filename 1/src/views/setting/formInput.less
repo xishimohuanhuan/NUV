@@ -1,0 +1,89 @@
+@import "../../component/IntlTelInput/intl.css";
+
+.setting-form{
+    ul{
+        border-top: 1px solid #dcdcdc;
+        padding: 0 27px;
+        background: #fff;
+        li{
+            height: 97px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #dcdcdc; 
+            position: relative;
+            &:last-child{
+                border: 0;
+            }
+            h5{
+                font-size: 28px;
+                font-weight: normal;
+                font-stretch: normal;
+                letter-spacing: 0px;
+                color: #575757;
+            }
+            .select{
+                font-size: 26px;
+                font-style: normal;
+                line-height: 120px;
+                letter-spacing: 0px;
+                color: #3e80ca;
+                position: relative;
+                &::after{
+                    display: inline-block;
+                    content: '';
+                    margin: 1px 10px;
+                    width: 0;
+                    height: 0;
+                    border-left: 9px solid transparent;
+                    border-right: 9px solid transparent;
+                    border-top: 14px solid #3e80ca;
+                }
+            }
+            input{
+                position: absolute;
+                left: 216px;
+                border: 0;
+                outline: 0;
+                font-size: 24px;
+                letter-spacing: 0px;
+                color: #333333;
+                width: 55%;
+            }
+            span{
+                font-size: 24px;
+                letter-spacing: 0px;
+                color: #3e80ca; 
+            }
+        }
+    }
+    .bottom-btn{
+        height: 100px;
+        width: 100%;
+        background: #3e80ca;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        z-index: 99;
+        button{
+            height: 100%;
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: Transparent;
+            font-size: 34px;
+            letter-spacing: 0px;
+            color: #ffffff;
+        }
+    }
+    .disable {
+        background: #dfdfdf;
+    }
+    .test{
+        width:50px;
+        border: 1px solid red;
+        height: 20px;
+    }
+}

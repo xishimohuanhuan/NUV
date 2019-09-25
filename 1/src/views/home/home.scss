@@ -1,0 +1,938 @@
+.fixedPosition{
+  //position: fixed;
+  //top: 0;
+  //bottom: 0;
+  //width: 100%;
+  //height: 100%;
+  //overflow: hidden;
+  .user-popup{
+    position: fixed;
+    top: 0px;
+    width: 50%;
+    background: #12c532;
+    height: 100%;
+    z-index: 9999;
+  }
+}
+.top-header {
+  padding: 0 40px;
+  height: 90px;
+  width: 100%;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 101;
+  header {
+    height: 90px;
+    // border-bottom: 1px solid #dcdcdc;
+  }
+  .app-download {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    height: 90px;
+    line-height: 90px;
+    font-size: 24px;
+    color: #3e80ca;
+  }
+}
+
+.handle-loading {
+  &:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  }
+  &:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+
+.home-container {
+  padding: 0 0 112px;
+  //padding: 90px 0 112px;
+  height: auto;
+  min-height: 100%;
+  background-color: #fff;
+  -webkit-overflow-scrolling: touch;
+
+  > footer {
+    padding: 24px 0 29px;
+    text-align: center;
+    font-size: 22px;
+    background-color: #f8f8f8;
+  }
+
+  .top-header {
+    img {
+      width: 230px;
+      height: auto;
+      display: block;
+    }
+
+    p {
+      position: relative;
+      left: -24px;
+      font-size: 28px;
+      color: #535353;
+
+      &.active::after {
+        transform: rotateZ(180deg);
+      }
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-width: 10px 8px 0;
+        border-style: solid;
+        border-color: #7d7d7d transparent transparent;
+        /*灰 透明 透明 */
+        position: absolute;
+        right: -24px;
+        top: 48%;
+        margin-top: 2px;
+        transition-duration: .3s;
+        transform: rotateZ(0deg);
+      }
+    }
+
+    ul {
+      padding: 0 13px;
+      position: absolute;
+      top: 85%;
+      z-index: 99;
+      border-radius: 15px;
+      background-color: #fff;
+      border: solid 1PX #dcdcdc;
+
+      li {
+        padding: 24px 0 20px;
+        width: 125px;
+        height: 26px;
+        text-align: center;
+        line-height: 26px;
+        font-size: 26px;
+        color: #535353;
+        box-sizing: content-box;
+      }
+    }
+    ul:before {
+      content: "";
+      position: absolute;
+      right: 24px;
+      top: -20px;
+      width: 0;
+      height: 0;
+      border: solid 10px transparent;
+      border-bottom-color: #fff;
+      z-index: 100;
+    }
+    ul:after {
+      content: "";
+      position: absolute;
+      right: 22px;
+      top: -24px;
+      width: 0;
+      height: 0;
+      border: solid 12px transparent;
+      border-bottom-color: #dcdcdc;
+      z-index: 99;
+    }
+    .user-drawer{
+      position: absolute;
+      top: 33px;
+      left: 40px;
+      // bottom: 50%;
+      // margin: -25px 0;
+      img{
+        width: 40px;
+      }
+    }
+    .app-download {
+      position: absolute;
+      top: 0;
+      right: 40px;
+      height: 90px;
+      line-height: 90px;
+      font-size: 24px;
+      color: #3e80ca;
+    }
+  }
+
+  .banner {
+    margin: 0 40px;
+    padding-top: 10px;
+
+    .mint-swipe {
+      height: 332px;
+      overflow: visible !important;
+      img {
+        border-radius: 20px;
+      }
+      .mint-swipe-indicators {
+        bottom: -30px;
+        .is-active {
+          background: #52c1df;
+        }
+      }
+    }
+
+    .ad {
+      padding: 25px 0 27px;
+      // border-bottom: solid 1PX #dcdcdc;
+      border-top: solid 1px #eaeaea;
+      text-align: left;
+      margin-top: 34px;
+      .notice1 {
+        height: 32px;
+        line-height: 27px;
+        font-size: 28px;
+        color: #404040;
+        .no-content {
+          display: inline-block;
+          height: 28px;
+          line-height: 34px;
+          vertical-align: middle;
+        }
+
+        > img {
+          margin-right: 10px;
+          width: 29px;
+          height: 26px;
+          vertical-align: middle;
+        }
+
+        .more-notice {
+          position: relative;
+          // top: 6px;
+          float: right;
+          line-height: 34px;
+          vertical-align: middle;
+          color: #b1b1b1;
+        }
+
+        .notice-container {
+          display: inline-block;
+          height: 32px;
+          line-height: 32px;
+          transition: all 0.5s;
+          vertical-align: middle;
+          li {
+            height: 32px;
+            line-height: 36px;
+          }
+          .anim {
+            transition: all 0.5s;
+          }
+        }
+      }
+    }
+  }
+
+  .item {
+    background: #fff;
+
+    //合约现货
+    &.item-goods {
+      .mint-swipe-indicator {
+        height: 8px;
+        width: 36px;
+        border-radius: 0;
+        margin: 0;
+        opacity: 1;
+        background: #dedede;
+
+        &:first-child {
+          border-top-left-radius: 4PX;
+          border-bottom-left-radius: 4PX;
+        }
+
+        &:last-child {
+          border-top-right-radius: 4PX;
+          border-bottom-right-radius: 4PX;
+        }
+
+        &.is-active {
+          background: #52c1df;
+        }
+      }
+
+      .swiper {
+        height: 240px;
+
+        .mint-swipe-indicators {
+          bottom: 0;
+        }
+
+        .box1 {
+          min-width: 33.33333%;
+          flex: 0 0 33.333333%;
+          font-size: 28px;
+
+          p:nth-child(2) {
+            height: 28px;
+            line-height: 28px;
+            font-size: 34px;
+            box-sizing: content-box;
+            font-weight: bold;
+          }
+
+          p:first-child {
+            height: 26px;
+            line-height: 26px;
+            box-sizing: content-box;
+            padding-top: 48px;
+            font-weight: bold;
+            color: #404040;
+          }
+        }
+
+        .sign {
+          height: 28px; 
+          line-height: 28px;
+          font-size: 28px;
+        }
+
+        .num {
+          padding: 32px 0 34px;
+        }
+      }
+    }
+
+    //主币区 
+    &.item-money {
+      .swiper-slide-active {
+        position: relative;
+
+        &::before {
+          content: '';
+          width: 40px;
+          height: 100%;
+          position: absolute;
+          left: -50px;
+          top: 0;
+          z-index: 9;
+          background: #fff;
+        }
+      }
+
+      .all-currency-data {
+        .current-currency {
+          margin-bottom: 30px;
+          padding-bottom: 30px;
+          border-bottom: solid 1px #dcdcdc;
+          > div {
+            .add-type {
+              text-align: left;
+              & > p {
+                height: 34px;
+                line-height: 34px;
+                font-size: 34px;
+                font-weight: bold;
+                color: #505050;
+                & > span {
+                  font-size: 24px;
+                  font-weight: normal;
+                  color: #adadad;
+                }
+              }
+              & > span {
+                margin-top: 14px;
+                font-size: 24px;
+                color: #adadad;
+              }
+            }
+            .add-type,.add-money {
+              font-size: 34px;
+              > span {
+                font-size: 24px;
+              }
+              .box-center {
+                font-size: 24px;
+              }
+            }
+            .box-center {
+              font-size: 24px;
+            }
+          }
+          .add-money {
+            padding-right: 33px;
+          }
+        }
+      }
+
+      .icon {
+        margin-right: 20px;
+        width: 70px;
+        height: 70px;
+      }
+
+      .add-type span {
+        color: #adadad;
+      }
+
+      .add-money span {
+        color: #c8c8c8;
+      }
+
+      .btn {
+        position: relative;
+        top: -4px;
+        width: 144px;
+        height: 60px;
+        line-height: 62px;
+        color: #fff;
+        border-radius: 5px;
+        &.add {
+          background: #12c532;
+        }
+      }
+    }
+
+    .sub-tit {
+      padding: 44px 40px 0;
+      height: 34px;
+      line-height: 34px;
+      font-size: 34px;
+      font-weight: bold;
+      color: #3e80ca;
+      text-align: left;
+      box-sizing: content-box;
+    }
+  }
+
+  .advertising {
+    margin: 40px 40px 15px;
+    padding: 29px 25px 34px;
+    border-radius: 20px;
+	  border: solid 1PX #3e80ca;
+
+    img {
+      margin-right: 40px;
+      width: 69px;
+      height: 68px;
+      vertical-align: middle;
+    }
+
+    .advertising-content {
+      display: inline-block;
+      width: 330px;
+      vertical-align: middle;
+      text-align: left;
+
+      >p {
+        height: 28px;
+        line-height: 28px;
+        font-size: 28px;
+        color: #3e80ca;
+      }
+
+      >p:last-child {
+        margin-top: 13px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 24px;
+        color:#9c9c9c;
+      }
+    }
+
+    .advertising-operate {
+      display: inline-block;
+      position: relative;
+      top: 8px;
+      width: 160px;
+      height: 56px;
+      line-height: 56px;
+      text-align: center;
+      color: #fff;
+      background-color: #3e80ca;
+      border-radius: 5px;
+      font-size: 24px;
+    }
+  }
+
+  footer {
+    color: #c8c8c8;
+  }
+
+  .swiper-banner {
+    height: 344px;
+  }
+
+  .swiper-container {
+    width: 100%;
+    .mint-swipe {
+      overflow: visible !important;
+      .mint-swipe-items-wrap {
+        overflow: visible !important;
+      }
+    }
+    img {
+      border-radius: 20px;
+    }
+  }
+
+  .swiper-container .swiper-wrapper .swiper-slide {
+    width: 90%;
+    padding: 54px 5% 0;
+    box-sizing: content-box;
+  }
+
+  .swiper-container .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-container.swiper-banner .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: 344px;
+    border-radius: 20px;
+  }
+
+  .swiper-container .swiper-wrapper .swiper-slide-active {
+    width: 90%;
+    padding: 54px 5% 0;
+    box-sizing: content-box;
+  }
+}
+// 永续合约
+.subContra{
+  margin: 10px 27px 10px 27px;
+  display: flex;
+  justify-content: space-between;
+  .subCo-left{
+    .subCo-Title{
+      color: #505050;
+      font-size: 34px;
+      font-weight: bold;
+      span{
+        display: inline-block;
+        height: 36px;
+        line-height: 36px;
+        color: #3e80ca;
+        font-size: 20px;
+        // padding: 8px 15px 8px 25px;
+        padding: 0px 15px 0px 25px;
+        background: url('../../assets/img/home/sanjia.png') no-repeat;
+        background-size: 100% 100%;
+        border-radius: 5px;
+        font-weight: 400;
+      }
+    }
+    .subCo-swi{
+      height: 147px;
+      width: 339px;
+      margin-top: 25px;
+      overflow: hidden;
+      ul{
+        position: relative;
+        top: 0;
+        transition: all 0.8s;
+        li{
+          margin-bottom: 26px;
+          height: 60px;
+          background: linear-gradient(#ffffff,#ddf3ff);
+          border-radius: 5px;
+          font-size: 22px;
+          color: #434343;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          span:nth-child(2){
+            margin: 0 5px;
+          }
+          span:nth-child(3){
+            color: #40d190;
+            width: 80px;
+          }
+          img{
+            width: 26px;
+            height: 26px;
+          }
+        }
+        .maddle{
+          background: linear-gradient(#ddf3ff);
+        }
+        .upAdd{
+          background: linear-gradient(#ddf3ff,#ffffff);
+          color: #434343;
+        }
+      }
+    }
+    .registerGo{
+      height: 147px;
+      width: 100%;
+      display: flex;
+      border: 1px solid #dcdcdc;
+      border-radius: 5px;
+      margin-top: 20px;
+      .leftt{
+        color: #373737;
+        font-size: 28px;
+        text-align: left;
+        margin-left: 10px;
+        background: url('../../assets/img/home/s1.jpg') no-repeat;
+        background-size: 151px 127px ;
+        background-position: 96% 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        span:nth-child(1){
+          margin: 12px 0 5px;
+          font-weight: bold;
+        }
+        span:nth-child(2){
+          width: 50%;
+          font-size: 22px;
+          line-height: 40px;
+          color: #9c9c9c;
+        }
+      }
+      img{
+        height: 127px;
+        width: 151px;
+        margin-right: 7px;
+        margin-top: 10px;
+      }
+    }
+    .bottom-add{
+      width: 100%;
+      height: 65px;
+      display: flex;
+      margin-top: 18px;
+      border: 1px solid #dcdcdc;
+      border-radius: 5px;
+      align-items: center;
+      font-size: 24px;
+      color: #363636;
+      img{
+        height: 29px;
+        width: 34px;
+        margin-left: 66px;
+        margin-right: 20px;
+      }
+      .imgTwo{
+        height: 33px;
+        width: 33px;
+      }
+    }
+  }
+  .subCo-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .lookAll{
+      color: #b1b1b1;
+      font-size: 24px;
+      height: 50px;
+      line-height: 50px;
+      margin-bottom: 25px;
+      margin-right: 15px;
+      text-align: right;
+    }
+    .rigiht-sub{
+      height: 147px;
+      width: 341px;
+      position: relative;
+      border: 1px solid #eaeaea;
+      border-radius: 5px;
+      margin-bottom: 18px; 
+      .span-right{
+        height: 66px;
+        width: 81px;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .top-subCo{
+        display: flex;
+        margin: 23px 0 0 21px;
+        font-size: 22px;
+        color: #adadad;
+        line-height: 34px;
+        span:nth-child(1){
+          color: #505050;
+          font-size: 34px;
+          font-weight: 600;
+          margin-right: 10px;
+        }
+      }
+      .bott-sibCo{
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 20px 0 20px;
+        font-size: 34px;
+        span:nth-child(1){
+          font-size: 28px;
+          line-height: 55px;
+        }
+      }
+    }
+    .rigiht-sub1{
+      background:url('../../assets/img/home/2.png') no-repeat;
+      background-size: 100% 100%;
+    }
+    .rigiht-sub2{
+      background:url('../../assets/img/home/3.png') no-repeat;
+      background-size: 100% 100%;
+    }
+    .rigiht-sub3{
+      background:url('../../assets/img/home/4.png') no-repeat;
+      background-size: 100% 100%;
+    }
+    .rigiht-sub4{
+      background:url('../../assets/img/home/5.png') no-repeat;
+      background-size: 100% 100%;
+    }
+    .rigiht-sub5{
+      background:url('../../assets/img/home/6.png') no-repeat;
+      background-size: 100% 100%;
+    }
+    .rigiht-sub6{
+      background:url('../../assets/img/home/1.png') no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+} 
+// 币币行情 涨幅榜 成交榜
+.coinSlide{
+  position: relative;
+  .coinTitle{
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 28px;
+    color: #787878;
+    .border-pot{
+      // position: relative;
+      margin-top: 30px;
+      span:nth-child(2){
+        display: block;
+        height: 5px;
+        width: 70%;
+        background-color: #3e80ca;
+        margin: 0 auto;
+        margin-top: 17px;
+      }
+      // .noneMan{
+      //   position: absolute;
+      //   z-index: 3;
+      //   height: 46px;
+      //   width: 118px;
+      //   font-size: 20px;
+      //   line-height: 36px;
+      //   border-radius: 5px;
+      //   color: #3e80ca;
+      //   top: -35px;
+      //   left: 85%;
+      //   background: url('../../assets/img/home/xiaXia.png') no-repeat;
+      //   background-size: 100% 100%;
+      // }
+    }
+    .addBLue{
+      color: #3e80ca;
+    }
+  }
+  .detail-list{
+    margin: 30px 40px  0 40px;
+    .current-currency {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: solid 1px #dcdcdc;
+      > div {
+        .add-type {
+          text-align: left;
+          margin: auto;
+          & > p {
+            height: 34px;
+            line-height: 34px;
+            font-size: 34px;
+            font-weight: bold;
+            color: #505050;
+            & > span {
+              font-size: 24px;
+              font-weight: normal;
+              color: #adadad;
+            }
+          }
+          & > span {
+            margin-top: 14px;
+            font-size: 24px;
+            color: #adadad;
+          }
+        }
+        .add-type,.add-money {
+          font-size: 34px;
+          > span {
+            font-size: 24px;
+          }
+          .box-center {
+            font-size: 24px;
+          }
+        }
+      }
+      .add-money {
+        padding-right: 33px;
+        .zhicang{
+          margin-bottom: 5px;
+        }
+      }
+      .box1 .padding-l20{
+        font-size: 28px;
+        width: 150px;
+        height: 70px;
+        border-radius: 5px;
+        padding-left: 0;
+        margin-top: 6px;
+        .btn{
+          color: white;
+        }
+      }
+    }
+  }
+  // 可以滑动的币币行情
+  .van-hairline--top-bottom::after{
+    border-width:0;
+  }
+  .van-tab{
+    font-size: 28px;
+  }
+  .van-tabs--line .van-tabs__wrap{
+    height: 55px;
+    // position: sticky;
+    // top: 90px;
+  }
+  .van-tabs__track {
+    margin-top: 10px;
+  }
+  .noneMan{
+    position: absolute;
+    z-index: 100;
+    height: 46px;
+    width: 118px;
+    font-size: 20px;
+    line-height: 36px;
+    border-radius: 5px;
+    color: #3e80ca;
+    top: -35px;
+    left: 600px;
+    background: url('../../assets/img/home/xiaXia.png') no-repeat;
+    background-size: 100% 100%;
+  }
+}
+.newDetailCoin{
+  margin: 0 27px 0 27px;
+  .coinTitle{
+    color: #505050;
+    font-size: 34px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span:nth-child(2){
+      color: #b1b1b1;
+      font-size: 24px;
+      font-weight: 400;
+    }
+    .noneMan{
+      position: absolute;
+      z-index: 100;
+      height: 36px;
+      // width: 118px;
+      padding: 0px 15px 0px 25px;
+      font-size: 20px;
+      line-height: 36px;
+      border-radius: 5px;
+      color: #3e80ca;
+      left: 175px;
+      background: url('../../assets/img/home/sanjia.png') no-repeat;
+      background-size: 100% 100%;
+      font-weight: 400;
+    }
+  }
+  .detail-list{
+    margin: 30px 0px  0 0px;
+    .current-currency {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: solid 1px #dcdcdc;
+      > div {
+        .add-type {
+          text-align: left;
+          margin: auto;
+          & > p {
+            height: 34px;
+            line-height: 34px;
+            font-size: 34px;
+            font-weight: bold;
+            color: #505050;
+            & > span {
+              font-size: 24px;
+              font-weight: normal;
+              color: #adadad;
+            }
+          }
+          & > span {
+            margin-top: 14px;
+            font-size: 24px;
+            color: #adadad;
+          }
+        }
+        .add-type,.add-money {
+          font-size: 34px;
+          > span {
+            font-size: 24px;
+          }
+          .box-center {
+            font-size: 24px;
+          }
+        }
+      }
+      .add-money {
+        padding-right: 33px;
+        .zhicang{
+          margin-bottom: 5px;
+        }
+      }
+      .box1 .padding-l20{
+        font-size: 28px;
+        width: 150px;
+        height: 70px;
+        border-radius: 5px;
+        padding-left: 0;
+        margin-top: 6px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        .btn{
+          color: white;
+          height: 70px;
+          line-height: 70px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1) {
+  .border-one { border: 1px solid #dcdcdc !important}
+  .border-bom { border-bottom: 1px solid #dcdcdc !important}
+  .border-top { border-top: 1px solid #dcdcdc !important}
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .border-one { border: 1PX solid #dcdcdc !important}
+  .border-bom { border-bottom: 1PX solid #dcdcdc !important}
+  .border-top { border-top: 1PX solid #dcdcdc !important}
+}

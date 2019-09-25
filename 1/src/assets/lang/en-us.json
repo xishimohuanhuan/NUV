@@ -1,0 +1,41 @@
+{
+  "language": "英文",
+  "tit": {
+    "notice": "Notice",
+    "goods": "Contract",
+    "main": "Exchange"
+  },
+  "foot": "GQG is copyrighted by Singapore Deep Net Technology and does not provide trading services within mainland China.",
+  "menu": {
+    "home": "Home",
+    "market": "Markets",
+    "transaction": "Trade",
+    "legalTender": "OTC",
+    "my": "Personal"
+  },
+  "notice": {
+    "default": "No announcement information！",
+    "noticeDetail": "Notice detail",
+    "viewMoreNotice": "View more notice",
+    "noNoticeList": "no notice list",
+    "noNoticeDetail": "no notice detail",
+    "moreNotice": "Detail"
+  },
+  "redPacket": {
+    "message": "Simulation transaction",
+    "poptip": "Send 10,000 USDT",
+    "operate": "Play"
+  },
+  "quotation": {
+    "quotation": "quotation",
+    "HBMain": "HB Main",
+    "HBNext": "HB Next",
+    "contract": "Contract",
+    "name": "Name",
+    "marketPrice": "Market Price",
+    "change": "Change%"
+  },
+  "marketData": {
+    "volumn": "24hTurnover(CNY)"
+  }
+}

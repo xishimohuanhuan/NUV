@@ -1,0 +1,27 @@
+$ui_color:#f90;
+
+.ui-font-c {
+  color: $ui_color !important;
+}
+
+.ui-bg-c {
+  background-color: $ui_color !important;
+}
+
+// home 合约现货
+.item {
+  &.item-goods {
+    .mint-swipe-indicator {
+      &.is-active {
+        background: $ui_color !important;
+      }
+    }
+  }
+}
+
+.router-link-exact-active,
+.router-link-active {
+  .nav-label {
+    color: $ui_color !important; // 6bc097
+  }
+}
