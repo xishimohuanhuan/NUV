@@ -10,7 +10,7 @@
   "dependencies": {
     "bignumber.js": "^9.0.0",
     "echarts": "^4.2.1",
-    "highcharts": "^7.1.1",
+    "highcharts": "^7.2.2",
     "lib-flexible": "^0.3.2",
     "mint-ui": "^2.2.13",
     "postcss-px2rem-exclude": "^0.0.6",
@@ -34,7 +34,7 @@
     "css": "^2.2.4",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "highcharts": "^7.1.1",
+    "highcharts": "^7.2.2",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "lib-flexible": "^0.3.2",
