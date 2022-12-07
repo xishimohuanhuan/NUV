@@ -43,7 +43,7 @@
     "postcss-px2rem": "^0.3.0",
     "postcss-px2rem-exclude": "^0.0.6",
     "qrcodejs2": "^0.0.2",
-    "qs": "^6.6.0",
+    "qs": "^6.5.3",
     "sass-loader": "^7.1.0",
     "swiper": "^4.4.6",
     "vant": "^1.6.15",
